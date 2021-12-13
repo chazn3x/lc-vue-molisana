@@ -1,33 +1,71 @@
 <template>
   <header>
-      <div class="logo">
-        <img src="../assets/img/la-molisana-logo.png" alt="">
+      <div class="container">
+        <div class="logo">
+            <img src="../assets/img/la-molisana-logo.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li v-for="(link, index) in links" :key="index">
+                    <a :class="{active: link.current}" :href="link.url">{{link.text}}</a>
+                </li>
+            </ul>
+        </nav>
       </div>
-      <nav>
-          <ul>
-              <li>
-                  <a href="#">Link</a>
-              </li>
-              <li>
-                  <a href="#">Link</a>
-              </li>
-              <li>
-                  <a href="#">Link</a>
-              </li>
-              <li>
-                  <a href="#">Link</a>
-              </li>
-          </ul>
-      </nav>
   </header>
 </template>
 
 <script>
 export default {
     name: "Header",
+    data() {
+        return {
+            links: [
+                {
+                    text: "Home",
+                    url: "#",
+                    current: false,
+                },
+                {
+                    text: "Prodotti",
+                    url: "#",
+                    current: true,
+                },
+                {
+                    text: "Chi Siamo",
+                    url: "#",
+                    current: false,
+                },
+                {
+                    text: "Contatti",
+                    url: "#",
+                    current: false,
+                },
+            ]
+        }
+    }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import '../assets/style/partials/variables.scss';
+    header {
+        text-align: center;
+    }
+    nav {
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            li a {
+                display: inline-block;
+                padding: 15px 20px;
+                text-decoration: none;
+                color: #000;
+                &.active, &:hover {
+                    background-color: $secondaryColor;
+                }
+            }
+        }
+    }
 </style>
