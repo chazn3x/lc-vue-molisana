@@ -32,6 +32,10 @@ export default {
         .products-list {
             display: flex;
             flex-wrap: wrap;
+            > * {
+                width: calc(25% - 6px);
+                margin: 3px;
+            }
         }
     }
 </style>

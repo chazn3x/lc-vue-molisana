@@ -1,13 +1,11 @@
 <template>
   <header>
       <div class="container">
-        <div class="logo">
-            <img src="../../assets/img/la-molisana-logo.png" alt="">
-        </div>
+        <Logo alt-text="Logo Header"/>
         <nav>
             <ul>
                 <li v-for="(link, index) in links" :key="index">
-                    <a :class="{active: link.current}" :href="link.url">{{link.text}}</a>
+                    <a :class="{active: link.current}" :href="link.url" @click.prevent="changePage(index)">{{link.text}}</a>
                 </li>
             </ul>
         </nav>
@@ -16,8 +14,12 @@
 </template>
 
 <script>
+import Logo from '../commons/Logo.vue'
 export default {
     name: "Header",
+    components: {
+        Logo,
+    },
     data() {
         return {
             links: [
@@ -42,6 +44,12 @@ export default {
                     current: false,
                 },
             ]
+        }
+    },
+    methods: {
+        changePage(index) {
+            this.links.forEach(link => link.current = false);
+            this.links[index].current = true;
         }
     }
 }
