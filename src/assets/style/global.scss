@@ -22,6 +22,10 @@ section {
 .container {
     margin: 0 auto;
     max-width: 1200px;
+    &-small {
+        @extend .container;
+        max-width: 800px;
+    }
 }
 
 /*----------------------
@@ -34,6 +38,6 @@ body {
 /*----------------------
     Typo
 ----------------------*/
-h2 {
+h2, h3 {
     color: $mainColor;
 }

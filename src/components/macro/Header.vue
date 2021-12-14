@@ -2,7 +2,7 @@
   <header>
       <div class="container">
         <div class="logo">
-            <img src="../assets/img/la-molisana-logo.png" alt="">
+            <img src="../../assets/img/la-molisana-logo.png" alt="">
         </div>
         <nav>
             <ul>
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/partials/variables.scss';
+@import '../../assets/style/partials/variables.scss';
     header {
         text-align: center;
     }

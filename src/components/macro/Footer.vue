@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
     footer {
-        background-image: url(../assets/img/footer-montagne-bottom.jpg);
+        background-image: url(../../assets/img/footer-montagne-bottom.jpg);
         padding: 40px 0;
     }
 </style>
